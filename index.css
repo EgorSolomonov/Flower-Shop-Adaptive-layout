@@ -743,6 +743,22 @@ body main .contacts .contacts__content .contacts__wrapper .contacts_item span {
   }
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #7a9076;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #eaadec;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #7a9076;
+}
+
 footer {
   width: 92vw;
   padding: 0 50px;
