@@ -15,22 +15,27 @@ body {
   background-color: #a9a2a2;
   grid-template-rows: 102% 2%;
 }
-body .site-wrapper {
-  position: relative;
+body .body-wrapper {
   background-color: #7a9076;
   height: 100%;
-  padding: 0 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body .body-wrapper .main-wrapper {
+  position: relative;
   max-width: 1480px;
+  padding: 0 15px;
   display: grid;
   grid-template-areas: "header" "content";
   grid-template-rows: 100px 1fr;
 }
 @media (max-width: 1240px) {
-  body .site-wrapper {
+  body .body-wrapper .main-wrapper {
     padding: 0 15px;
   }
 }
-body .site-wrapper .arrow-up {
+body .body-wrapper .main-wrapper .arrow-up {
   position: fixed;
   width: 60px;
   height: 60px;
@@ -42,12 +47,29 @@ body .site-wrapper .arrow-up {
   z-index: 3;
   visibility: hidden;
 }
-body .site-wrapper .arrow-up i {
+@media (max-height: 1000px) {
+  body .body-wrapper .main-wrapper .arrow-up {
+    top: 650px;
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-height: 900px) {
+  body .body-wrapper .main-wrapper .arrow-up {
+    top: 610px;
+  }
+}
+@media (max-width: 992px) {
+  body .body-wrapper .main-wrapper .arrow-up {
+    display: none;
+  }
+}
+body .body-wrapper .main-wrapper .arrow-up i {
   cursor: pointer;
   color: white;
   font-size: 60px;
 }
-body .site-wrapper header {
+body .body-wrapper .main-wrapper header {
   grid-area: header;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -55,68 +77,68 @@ body .site-wrapper header {
   align-items: center;
 }
 @media (max-width: 900px) {
-  body .site-wrapper header {
+  body .body-wrapper .main-wrapper header {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 @media (max-width: 768px) {
-  body .site-wrapper header {
+  body .body-wrapper .main-wrapper header {
     grid-template-columns: 1fr 2fr 2fr;
   }
 }
 @media (max-width: 600px) {
-  body .site-wrapper header {
+  body .body-wrapper .main-wrapper header {
     grid-template-columns: 2fr 2fr 2fr;
   }
 }
 @media (max-width: 550px) {
-  body .site-wrapper header {
+  body .body-wrapper .main-wrapper header {
     grid-template-columns: 2fr 4fr;
   }
 }
 @media (max-width: 550px) {
-  body .site-wrapper header .logo {
+  body .body-wrapper .main-wrapper header .logo {
     display: none;
   }
 }
-body .site-wrapper header .order-button:hover p {
+body .body-wrapper .main-wrapper header .order-button:hover p {
   color: #5a0c20;
 }
-body .site-wrapper a {
+body .body-wrapper .main-wrapper a {
   text-decoration: none;
 }
-body .site-wrapper p {
+body .body-wrapper .main-wrapper p {
   cursor: pointer;
 }
-body .site-wrapper p:hover {
+body .body-wrapper .main-wrapper p:hover {
   color: #dee3dd;
 }
-body .site-wrapper span:hover {
+body .body-wrapper .main-wrapper span:hover {
   color: #434f40;
 }
-body .site-wrapper .burger {
+body .body-wrapper .main-wrapper .burger {
   display: none;
 }
 @media (max-width: 900px) {
-  body .site-wrapper .burger {
+  body .body-wrapper .main-wrapper .burger {
     display: block;
   }
 }
-body .site-wrapper .nav-buttons {
+body .body-wrapper .main-wrapper .nav-buttons {
   display: flex;
   justify-content: space-evenly;
 }
 @media (max-width: 900px) {
-  body .site-wrapper .nav-buttons {
+  body .body-wrapper .main-wrapper .nav-buttons {
     display: none;
   }
 }
-body .site-wrapper .order-button {
+body .body-wrapper .main-wrapper .order-button {
   display: flex;
   justify-content: center;
 }
 @media (max-width: 400px) {
-  body .site-wrapper .order-button p {
+  body .body-wrapper .main-wrapper .order-button p {
     font-size: 22px;
     text-align: center;
   }
@@ -140,6 +162,7 @@ body main .button {
   background: #a9a2a2;
   border-radius: 35px;
   margin-top: 50px;
+  cursor: pointer;
   width: 195px;
   height: 70px;
   display: flex;
@@ -689,7 +712,7 @@ body main .contacts .contacts__content .image img {
 }
 body main .contacts .contacts__content .contacts__wrapper .contacts_item {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   padding: 20px 0;
 }
 body main .contacts .contacts__content .contacts__wrapper .contacts_item i {
